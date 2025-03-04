@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+
+body {
+    background: linear-gradient(to bottom, #fff, #fadadd, #ffcccb);
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.circles-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+/* Оформление кружков */
+.circle {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Заголовок */
+.circle-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #5d1e1e;
+    margin: 0;
+}
+
+/* Подзаголовок */
+.circle-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Цвета и расположение */
+.circle-left {
+    background-color: #ffcccb;
+    left: 10%;
+}
+
+.circle-right {
+    background-color: #add8e6;
+    right: 10%;
+}
+
+.circle:nth-child(1) { top: 50px; }
+.circle:nth-child(2) { top: 320px; }
+.circle:nth-child(3) { top: 600px; background-color: #90ee90; }
+
+/* Анимация появления */
+.circle.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для кнопки */
+.floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 20px 40px;
+    background-color: #ff6f61;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.floating-button:hover {
+    background-color: #e04e43;
+    transform: scale(1.1);
+}
+
+.floating-button:active {
+    transform: scale(1);
+}
+
+/* Стили для формы записи изменений (модальное окно) */
+.form-container {
+    display: none; /* По умолчанию форма скрыта */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    z-index: 1000; /* Форма будет на переднем плане */
+}
+
+h1 {
+    font-size: 24px;
+    color: #5d1e1e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+input, button {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e04e43;
+}
+
+.close-form-button {
+    background-color: #ddd;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.close-form-button:hover {
+    background-color: #bbb;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник самочувствия</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="circles-container">
+        <div class="circle circle-left">
+            <p class="circle-title">Записывайте</p>
+            <p class="circle-subtitle">Следите за самочувствием</p>
+        </div>
+        <div class="circle circle-right">
+            <p class="circle-title">Анализируйте</p>
+            <p class="circle-subtitle">Отслеживайте динамику</p>
+        </div>
+        <div class="circle circle-left">
+            <p class="circle-title">Контролируйте</p>
+            <p class="circle-subtitle">Не упускайте детали</p>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button id="start-button" class="floating-button">Начать записывать изменения</button>
+    </div>
+
+    <!-- Форма для записи изменений -->
+    <div id="record-form-container" class="form-container">
+        <h1>Запишите изменения</h1>
+        <form id="health-record-form">
+            <label for="date">Дата:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="mood">Настроение:</label>
+            <input type="text" id="mood" name="mood" placeholder="Опишите ваше настроение" required>
+
+            <label for="stress">Уровень стресса:</label>
+            <input type="number" id="stress" name="stress" min="1" max="10" placeholder="1-10" required>
+
+            <label for="pulse">Пульс:</label>
+            <input type="number" id="pulse" name="pulse" placeholder="Пульс в ударах в минуту" required>
+
+            <button type="submit">Сохранить изменения</button>
+        </form>
+        <button id="close-form" class="close-form-button">Закрыть форму</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
